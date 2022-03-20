@@ -1,0 +1,13 @@
+.navBar {
+    font-size: larger;
+    background-color: #008184;
+    width: 100%;
+}
+
+.navBar__logo {
+    font-size: 5rem;
+}
+
+.navBar__end {
+    justify-content: end;
+}
