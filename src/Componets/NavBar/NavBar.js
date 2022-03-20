@@ -7,8 +7,12 @@ const NavBar = () => {
         <div>
             <Navbar variant="dark" expand="lg" className="navBar">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="#home" className="navBar__brand">
                         <BsController className="navBar__logo"/>
+                        <div className="navBar__title">
+                        <label>GAMES</label>
+                        <label>RODO</label>
+                        </div>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbar-nav" />
                     <Navbar.Collapse className="navBar__end" id="navbar-nav">

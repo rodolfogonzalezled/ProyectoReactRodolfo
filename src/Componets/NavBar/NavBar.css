@@ -4,10 +4,24 @@
     width: 100%;
 }
 
+.navBar__brand {
+    display: flex;
+    align-items: center;
+}
+
+.navBar__title {
+    font-size: medium;
+    font-family: 'Press Start 2P';
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5em;
+}
+
 .navBar__logo {
-    font-size: 5rem;
+    font-size: 4.5rem;
 }
 
 .navBar__end {
     justify-content: end;
+    font-family: 'Londrina Solid', cursive;
 }
