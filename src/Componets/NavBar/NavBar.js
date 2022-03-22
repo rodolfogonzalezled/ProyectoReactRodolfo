@@ -1,6 +1,7 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import './NavBar.css';
 import { BsController } from 'react-icons/bs';
+import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = () => {
     return (
@@ -18,9 +19,11 @@ const NavBar = () => {
                     <Navbar.Collapse className="navBar__end" id="navbar-nav">
                         <Nav>
                             <Nav.Link href="#home">Inicio</Nav.Link>
-                            <Nav.Link href="#cart">Carrito</Nav.Link>
                             <Nav.Link href="#contact">Contacto</Nav.Link>
                             <Nav.Link href="#login">Login</Nav.Link>
+                            <Nav.Link href="#cart">
+                                <CartWidget/>
+                            </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
