@@ -18,7 +18,7 @@ const ItemCount = ({stock, initialCount = 1, onAdd}) => {
                 closeOnClick: true,
                 pauseOnHover: false,
                 draggable: true,
-                progress: undefined,
+                progress: undefined, 
                 theme: "dark",
                 });
         }

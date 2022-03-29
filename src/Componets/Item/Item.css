@@ -1,0 +1,30 @@
+.products {
+    text-align: center;
+    border-radius: 5%;
+}
+
+.products__info {
+    border-top: outset;
+}
+
+.products__img {
+    width: 85%;
+    align-self: center;
+    padding: 5% 0;
+    border-radius: 5%;
+}
+
+.products__img:hover {
+    transform: scale(1.1);
+}
+
+.card-text {
+    margin: 7%;
+    border-top: outset;
+}
+
+.card-initial {
+    width: 25%;
+    margin: 3%;
+    
+}
