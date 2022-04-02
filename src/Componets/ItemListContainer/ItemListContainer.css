@@ -4,6 +4,10 @@
 }
 
 .Filters {
-    display: flex;
     margin: 2%;
+}
+
+.InputName {
+    width: 30%;
+    margin-right: 5px
 }

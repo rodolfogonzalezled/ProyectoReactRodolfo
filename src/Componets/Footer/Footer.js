@@ -13,7 +13,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="FooterFirm">
-                    <h5> Rodolfo Gonzalez © 2022. Todos los derechos Reservados. </h5>
+                    <p> Rodolfo Gonzalez © 2022. Todos los derechos Reservados. </p>
                 </div>
             </footer>
         </div>

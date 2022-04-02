@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
 import { getProductsByCategory, getProducts, getProductsByName } from '../../asyncmock';
+import { ImSearch } from 'react-icons/im';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
@@ -64,13 +65,12 @@ const ItemListContainer = ({ greeting }) => {
 
     return (
         <div>
-            <div className='Filters container'>
-                <h4>Buscar por nombre:🔍</h4>
-                <input type="text" placeholder="Buscar por nombre..." value={search} onChange={(e) => setSearch(e.target.value)} />
+            <div className='Filters'>
+                <input className='InputName' type="text" placeholder="Buscar juego por nombre..." value={search} onChange={(e) => setSearch(e.target.value)} />
+                <ImSearch/>
             </div>
             {loading ? <Loading /> :
                 <div>
-                    <h1 className='Greeting'>{greeting}</h1>
                     {products.length === 0 ? <h1> No se encontraron coincidencias </h1> : <ItemList products={products} />}
                 </div>
             }
