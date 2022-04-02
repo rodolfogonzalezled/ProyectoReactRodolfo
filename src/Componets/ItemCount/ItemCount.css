@@ -1,12 +1,17 @@
-.itemCount {
-    display: flex;
-    justify-content: space-between;
-    width: 20%;
-    margin: 10px;
+.ContainerCount {
+    text-align: center;
 }
 
-.addCart {
-    width: 16%;
-    padding: 10;
-    margin: 10px;
+.ItemCount {
+    display: flex;
+    justify-content: center;
+    margin: 3% 0;
+}
+
+.Count {
+    padding: 0 5%;
+}
+
+.AddCart {
+    width: 35%;
 }
