@@ -1,29 +1,39 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
-import './NavBar.css';
+import { Link, NavLink } from "react-router-dom";
 import { BsController } from 'react-icons/bs';
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
+import './NavBar.css';
 
 const NavBar = () => {
     return (
         <div>
-            <Navbar variant="dark" expand="lg" className="navBar">
+            <Navbar variant="dark" expand="lg" className="NavBar">
                 <Container>
-                    <Navbar.Brand href="#home" className="navBar__brand">
-                        <BsController className="navBar__logo"/>
-                        <div className="navBar__title">
-                        <label>GAMES</label>
-                        <label>RODO</label>
+                    <Link to='/' className="text-decoration-none">
+                        <div className="NavBarBrand ActiveOption">
+                            <BsController className="Logo" />
+                            <div className="NavBarTitle">
+                                <label>GAMES</label>
+                                <label>RODO</label>
+                            </div>
                         </div>
-                    </Navbar.Brand>
+                    </Link>
                     <Navbar.Toggle aria-controls="navbar-nav" />
-                    <Navbar.Collapse className="navBar__end" id="navbar-nav">
+                    <Navbar.Collapse className="NavBarEnd" id="navbar-nav">
                         <Nav>
-                            <Nav.Link href="#home">Inicio</Nav.Link>
-                            <Nav.Link href="#contact">Contacto</Nav.Link>
-                            <Nav.Link href="#login">Login</Nav.Link>
-                            <Nav.Link href="#cart">
-                                <CartWidget/>
-                            </Nav.Link>
+                            <NavDropdown title="Categorias" id="basic-nav-dropdown" className="p-0">
+                                <NavDropdown.Item as={Link} to='/category/accion'> Acción </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to='/category/combate'> Combate </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to='/category/conduccion'> Conducción </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to='/category/deportes'> deportes </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to='/category/simulacion'> Simulación </NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item as={Link} to='/'> Mostrar Todos </NavDropdown.Item>
+                            </NavDropdown>
+                            <Nav.Link as={NavLink} to='/login' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}> Login </Nav.Link>
+                            <Nav.Link as={NavLink} to='/contact' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}> Contacto </Nav.Link>
+                            <Nav.Link as={NavLink} to='/Cart' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}> Carrito </Nav.Link>
+                            <CartWidget />
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

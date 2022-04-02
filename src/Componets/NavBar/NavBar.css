@@ -1,15 +1,20 @@
-.navBar {
+.NavBar {
     font-size: larger;
     background-color: #008184;
     width: 100%;
 }
 
-.navBar__brand {
+.NavBarBrand {
     display: flex;
     align-items: center;
 }
 
-.navBar__title {
+.NavBarBrand :hover {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.NavBarTitle {
     font-size: medium;
     font-family: 'Press Start 2P';
     display: flex;
@@ -18,11 +23,43 @@
     text-align: center;
 }
 
-.navBar__logo {
+.Logo {
     font-size: 4.5rem;
+    text-decoration: none;
 }
 
-.navBar__end {
+.NavBarEnd {
     justify-content: end;
     font-family: 'Londrina Solid', cursive;
+}
+
+.NavBarEnd :hover {
+    color: white;
+    text-decoration: none;
+}
+
+.Option {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    margin: 0 50px;
+    text-decoration: none;
+}
+
+.Option :hover {
+    color: white;
+}
+
+.ActiveOption {
+    color: white;
+    text-decoration: none;
+    margin: 0 50px;
+}
+
+.ActiveOption :hover {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+}
+
+.NavCategory {
+    padding: 0;
 }

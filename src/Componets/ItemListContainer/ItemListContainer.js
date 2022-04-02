@@ -1,28 +1,79 @@
 import React, { useEffect, useState } from 'react';
-import ItemCount from '../ItemCount/ItemCount';
-import './ItemListContainer.css';
-import { getProducts } from '../../asyncmock';
+import { useParams } from "react-router-dom";
 import ItemList from '../ItemList/ItemList';
-
-const onAdd = (quantity) => {
-    console.log("click en botón Agregar al carrito", quantity);
-}
+import Loading from '../Loading/Loading';
+import { getProductsByCategory, getProducts, getProductsByName } from '../../asyncmock';
+import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
+    const { categoryId } = useParams();
     const [products, setProducts] = useState([]);
+    const [search, setSearch] = useState("");
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getProducts()
-        .then(result => {
-            setProducts(result)
+        setLoading(true)
+        if (categoryId) {
+            getProductsByCategory(categoryId)
+                .then(result => {
+                    setProducts(result);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                })
+        } else {
+            getProducts()
+                .then(result => {
+                    setProducts(result);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                })
+        }
+
+        return (() => {
+            setSearch('');
+            setProducts([]);
         })
-    }, []);
-    
+    }, [categoryId]);
+
+    useEffect(() => {
+        setLoading(true)
+        getProductsByName(search, categoryId)
+            .then(result => {
+                console.log(result)
+                setProducts(result)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+
+        return (() => {
+            setProducts([]);
+        })
+    }, [search]);
+
     return (
         <div>
-            <h1 className='greeting'>{greeting}</h1>
-            <ItemList products={products}/>
-            <ItemCount stock={10} initialCount={1} onAdd={onAdd} />
+            <div className='Filters container'>
+                <h4>Buscar por nombre:🔍</h4>
+                <input type="text" placeholder="Buscar por nombre..." value={search} onChange={(e) => setSearch(e.target.value)} />
+            </div>
+            {loading ? <Loading /> :
+                <div>
+                    <h1 className='Greeting'>{greeting}</h1>
+                    {products.length === 0 ? <h1> No se encontraron coincidencias </h1> : <ItemList products={products} />}
+                </div>
+            }
         </div>
     )
 }

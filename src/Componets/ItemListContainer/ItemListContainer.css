@@ -1,9 +1,9 @@
-.greeting {
+.Greeting {
     text-align: center;
     margin: 2%;
 }
 
-.list {
-    font-size: x-large;
-    font-family: 'Londrina Solid', cursive;
+.Filters {
+    display: flex;
+    margin: 2%;
 }

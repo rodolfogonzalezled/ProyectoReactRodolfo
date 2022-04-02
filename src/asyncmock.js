@@ -122,9 +122,37 @@ const products = [
 ];
 
 export const getProducts = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products)
+        }, 2000)
+    })
+}
+
+export const getProductsByName = (text, categoryId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            if (categoryId) {
+                resolve(products.filter(el => el.name.toUpperCase().includes(text.toUpperCase()) && el.category === categoryId))
+            } else {
+                resolve(products.filter(el => el.name.toUpperCase().includes(text.toUpperCase())))
+            }
+        }, 2000)
+    })
+}
+
+export const getProductsByCategory = (categoryId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.filter(el => el.category === categoryId))
+        }, 2000)
+    })
+}
+
+export const getProductById = (id) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find(prod => prod.id === parseInt(id)))
         }, 2000)
     })
 }

@@ -1,18 +1,18 @@
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button';
-import './Item.css'  
+import { Link } from "react-router-dom";
+import { Card, Button } from 'react-bootstrap'
+import './Item.css'
 
 const Item = ({ product }) => {
     return (
-        <div className='card-initial'>
+        <div className='CardInitial'>
             <Card className='products'>
-                <Card.Img className='products__img' variant="top" src={`${process.env.PUBLIC_URL}/images/${product.img}`} />
-                <Card.Body className='products__info'>
+                <Card.Img bsPrefix='ProductsImg' src={`${process.env.PUBLIC_URL}/images/${product.img}`} />
+                <Card.Body className='ProductsInfo'>
                     <Card.Title className='font-weight-bold'>{product.name}</Card.Title>
-                    <Button variant="outline-success">Ver detalle del Producto</Button>
-                    <Card.Text className='card-text'>
+                    <Button as={Link} to={`/item/${product.id}`} variant="outline-success">Ver detalle del Producto</Button>
+                    <Card.Text className='CardText'>
                         Stock disponible: {product.stock}
-                    </Card.Text>  
+                    </Card.Text>
                 </Card.Body>
             </Card>
         </div>

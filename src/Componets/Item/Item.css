@@ -3,28 +3,28 @@
     border-radius: 5%;
 }
 
-.products__info {
+.ProductsInfo {
     border-top: outset;
 }
 
-.products__img {
+.ProductsImg {
     width: 85%;
     align-self: center;
     padding: 5% 0;
     border-radius: 5%;
 }
 
-.products__img:hover {
+.ProductsImg:hover {
     transform: scale(1.1);
 }
 
-.card-text {
+.CardText {
     margin: 7%;
     border-top: outset;
 }
 
-.card-initial {
+.CardInitial {
     width: 25%;
     margin: 3%;
-    
+
 }

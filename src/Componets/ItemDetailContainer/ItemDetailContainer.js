@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import { getProductById } from '../../asyncmock'
 import ItemDetail from "../ItemDetail/ItemDetail"
-import { useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading'
 
 const ItemDetailContainer = () => {
@@ -15,11 +15,13 @@ const ItemDetailContainer = () => {
             .then(prod => {
                 setProduct(prod)
             })
+            .catch(error => {
+                console.log(error);
+            })
             .finally(() => {
                 setLoading(false);
             })
     }, [])
-
 
     if (loading) {
         return (
