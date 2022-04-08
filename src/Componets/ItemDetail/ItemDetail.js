@@ -1,29 +1,29 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Button } from 'react-bootstrap'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './ItemDetail.css'
 
-
-const onAdd = (quantity) => {
-    <div>
-        {
-            toast.success(`🛒 Producto agregado al carrito exitosamente`, {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            })
-        }
-    </div>
-}
-
 const ItemDetail = (product) => {
-    console.log('producto: ', product)
+    debugger;
+    const [quantity, setQuantity] = useState(0);
+
+    const onAdd = (count) => {
+        setQuantity(count);
+
+        toast.success(`🛒 Producto agregado al carrito exitosamente`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        })
+    }
 
     if (product) {
         return (
@@ -55,7 +55,7 @@ const ItemDetail = (product) => {
                                 </div>
                             </div>
                             <div className='DetailCount'>
-                                <ItemCount stock={product.stock} initialCount={1} onAdd={onAdd} />
+                                {quantity === 0 ? <ItemCount stock={product.stock} initialCount={1} onAdd={onAdd} /> : <Button as={Link} to='/cart' variant="outline-success">Ver carrito</Button>}
                             </div>
                         </Col>
                     </Row>
