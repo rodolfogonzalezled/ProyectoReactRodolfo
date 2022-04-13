@@ -6,7 +6,7 @@ const products = [
         category: 'deportes',
         year: 2022,
         language: 'Español',
-        img: 'nba-2k22.jpg',
+        img: 'https://image.api.playstation.com/vulcan/ap/rnd/202106/3002/Eaq9uyUlyLZK8L5xTlsPl0rM.png',
         stock: 3
     },
     {
@@ -16,28 +16,28 @@ const products = [
         category: 'deportes',
         year: 2022,
         language: 'Español',
-        img: 'fifa22.jpg',
+        img: 'https://image.api.playstation.com/vulcan/img/rnd/202111/0822/zDXM9K2cQiq0vKTDwF0TkAor.png',
         stock: 5
     },
     {
         id: 3,
+        name: 'Horizon II',
+        price: 10000,
+        category: 'accion',
+        year: 2020,
+        language: 'Inglés',
+        img: 'https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/1dy5w3SNiJnXjP8YvmydCL9X.png',
+        stock: 4
+    },
+    {
+        id: 4,
         name: 'Resident Evil 3',
         price: 5500,
         category: 'accion',
         year: 2021,
         language: 'Inglés',
-        img: 'resident-evil-3.jpg',
+        img: 'https://image.api.playstation.com/vulcan/img/cfn/11307dM-YkrvXIhUj7C-35RG_iIwwftGEOjY-oKon5KdyQbcUayV8NvdYW3oWFPji8FBDR0KmfGmu29AzYoLP_T54BklHbe4.png',
         stock: 5
-    },
-    {
-        id: 4,
-        name: 'Sims 4',
-        price: 2000,
-        category: 'simulacion',
-        year: 2019,
-        language: 'Español',
-        img: 'sims4.jpg',
-        stock: 3
     },
     {
         id: 5,
@@ -46,48 +46,48 @@ const products = [
         category: 'conduccion',
         year: 2021,
         language: 'Español',
-        img: 'need-for-speed.jpg',
+        img: 'https://image.api.playstation.com/vulcan/img/cfn/11307N1Juv68y8uNp4wQSfMgsCkchOdKIxajevhh8K8-4F00hO-gJw_fy9-SYdKSDO8zj1fvwnLYvrbKmMNS-wv0hLIyZM1P.png',
         stock: 8
     },
     {
         id: 6,
-        name: 'Crash Ctr',
-        price: 7000,
-        category: 'conduccion',
-        year: 2020,
-        language: 'Español',
-        img: 'crash-ctr.jpg',
-        stock: 4
-    },
-    {
-        id: 7,
-        name: 'Uncharted',
-        price: 2500,
-        category: 'accion',
-        year: 2019,
-        language: 'Español',
-        img: 'uncharted4.jpg',
-        stock: 4
-    },
-    {
-        id: 8,
-        name: 'Horizon II',
-        price: 10000,
-        category: 'accion',
-        year: 2020,
-        language: 'Inglés',
-        img: 'horizon.jpg',
-        stock: 4
-    },
-    {
-        id: 9,
         name: 'Far Cry 6',
         price: 10000,
         category: 'accion',
         year: 2022,
         language: 'Español',
-        img: 'farcry6.jpg',
+        img: 'https://image.api.playstation.com/vulcan/ap/rnd/202112/0908/ozAJk1gZcF1VlZ6dUR6pL69y.png',
         stock: 5
+    },
+    {
+        id: 7,
+        name: 'Uncharted',
+        price: 5500,
+        category: 'accion',
+        year: 2022,
+        language: 'Español',
+        img: 'https://image.api.playstation.com/vulcan/ap/rnd/202111/2000/B3Xbu6aW10scvc4SE7yXA1lZ.png',
+        stock: 8
+    },
+    {
+        id: 8,
+        name: 'Sims 4',
+        price: 2000,
+        category: 'simulacion',
+        year: 2019,
+        language: 'Español',
+        img: 'https://image.api.playstation.com/vulcan/img/rnd/202111/3019/oXPtJkwSeNlYon2MqTX9K4sQ.png',
+        stock: 3
+    },
+    {
+        id: 9,
+        name: 'Crash Ctr',
+        price: 7000,
+        category: 'conduccion',
+        year: 2020,
+        language: 'Español',
+        img: 'https://image.api.playstation.com/cdn/UP0002/CUSA13795_00/WweeYW23IEBQFaXfn5R7oEKi1sSD34Nu.png',
+        stock: 4
     },
     {
         id: 10,
@@ -96,7 +96,7 @@ const products = [
         category: 'combate',
         year: 2021,
         language: 'Inglés',
-        img: 'mortal-kombat.jpg',
+        img: 'https://image.api.playstation.com/vulcan/ap/rnd/202010/0822/SbTOirUJUZ3oNQG0eGDZAuCr.png',
         stock: 5
     },
     {
@@ -106,7 +106,7 @@ const products = [
         category: 'accion',
         year: 2021,
         language: 'Español',
-        img: 'spider-man.jpg',
+        img: 'https://image.api.playstation.com/vulcan/img/rnd/202011/0714/vuF88yWPSnDfmFJVTyNJpVwW.png',
         stock: 7
     },
     {
@@ -116,8 +116,8 @@ const products = [
         category: 'simulacion',
         year: 2021,
         language: 'Inglés',
-        img: 'it-takes-two.jpg',
-        stock: 2
+        img: 'https://image.api.playstation.com/vulcan/ap/rnd/202012/0815/7CRynuLSAb0vysSC4TmZy5e4.png',
+        stock: 5
     }
 ];
 

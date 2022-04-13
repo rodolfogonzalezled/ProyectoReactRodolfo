@@ -1,6 +1,7 @@
 .products {
     text-align: center;
-    border-radius: 5%;
+    border-radius: 8%;
+    background-color: #fff;
 }
 
 .ProductsInfo {
@@ -8,10 +9,10 @@
 }
 
 .ProductsImg {
-    width: 85%;
+    width: 80%;
     align-self: center;
     padding: 5% 0;
-    border-radius: 5%;
+    border-radius: 12%;
 }
 
 .ProductsImg:hover {
@@ -19,12 +20,14 @@
 }
 
 .CardText {
-    margin: 7%;
+    padding-top: 3%;
     border-top: outset;
 }
 
 .CardInitial {
-    width: 25%;
     margin: 3%;
+}
 
+.btnItem {
+    margin-bottom: 5%;
 }

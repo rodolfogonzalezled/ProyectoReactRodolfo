@@ -1,22 +1,25 @@
 import { Link } from "react-router-dom";
-import { Card, Button } from 'react-bootstrap'
+import { Card, Button, Col } from 'react-bootstrap'
 import './Item.css'
 
-const Item = ({ product }) => {
+const Item = ({ id, name, price, img }) => {
+
     return (
-        <div className='CardInitial'>
-            <Card className='products'>
-                <Card.Img bsPrefix='ProductsImg' src={`${process.env.PUBLIC_URL}/images/${product.img}`} />
-                <Card.Body className='ProductsInfo'>
-                    <Card.Title className='font-weight-bold'>{product.name}</Card.Title>
-                    <Button as={Link} to={`/item/${product.id}`} variant="outline-success">Ver detalle del Producto</Button>
-                    <Card.Text className='CardText'>
-                        Stock disponible: {product.stock}
-                    </Card.Text>
-                </Card.Body>
-            </Card>
-        </div>
+        <Col xs={10} md={4}>
+            <div className='CardInitial'>
+                <div className='products'>
+                    <Card.Img bsPrefix='ProductsImg' src={img} />
+                    <Card.Body className='ProductsInfo'>
+                        <Card.Title className='font-weight-bold'>{name}</Card.Title>
+                        <Button className="btnItem" as={Link} to={`/item/${id}`} variant="outline-success">Ver detalle del Producto</Button>
+                        <Card.Text className='CardText'>
+                            <b> Precio: </b> ${price}
+                        </Card.Text>
+                    </Card.Body>
+                </div>
+            </div>
+        </Col>
     )
-};
+}
 
 export default Item;

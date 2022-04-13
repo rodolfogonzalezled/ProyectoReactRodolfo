@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import { ToastContainer, toast } from 'react-toastify';
+import Button from 'react-bootstrap/Button';
 import 'react-toastify/dist/ReactToastify.css';
 import './ItemCount.css'
-
 
 const ItemCount = ({ stock, initialCount = 1, onAdd }) => {
     const [count, setCount] = useState(initialCount);
