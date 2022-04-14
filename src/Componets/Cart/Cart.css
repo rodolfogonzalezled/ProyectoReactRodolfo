@@ -19,7 +19,7 @@
 }
 
 .CartPrice {
-    text-align:right;
+    text-align: right;
     list-style: none;
 }
 
@@ -31,4 +31,14 @@
     display: flex;
     justify-content: space-evenly;
     padding: 2% 0;
+}
+
+.CartNoProducts {
+    font-size: xx-large;
+    font-family: 'Londrina Solid', cursive;
+    color: #008184;
+    padding: 5%;
+    display: 'flex';
+    border-radius: 10px;
+    background-color: lightgray;
 }

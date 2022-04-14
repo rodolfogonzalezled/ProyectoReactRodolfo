@@ -1,0 +1,16 @@
+.Success {
+    background-color: rgba(22, 134, 54, 0.70);
+}
+
+.Error {
+    background-color: rgba(235, 13, 13, 0.70);
+}
+
+.Info {
+    background-color: rgba(34, 114, 205, 0.7);
+}
+
+
+.SizeLarge {
+    font-size: 60px;
+}

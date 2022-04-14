@@ -1,26 +1,16 @@
 import { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { useNotification } from '../../Notification/Notification'
 import Button from 'react-bootstrap/Button';
-import 'react-toastify/dist/ReactToastify.css';
 import './ItemCount.css'
 
 const ItemCount = ({ stock, initialCount = 1, onAdd }) => {
     const [count, setCount] = useState(initialCount);
-
+    const { setNotification } = useNotification()
     const increment = () => {
         if (count < stock) {
             setCount(count + 1);
         } else {
-            toast.warn(`Solo hay disponible ${stock} unidades de éste producto`, {
-                position: "bottom-center",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
+            setNotification('otherClass', `Solo hay disponible ${stock} unidades de éste producto`, 'Info')
         }
     };
 
@@ -36,7 +26,6 @@ const ItemCount = ({ stock, initialCount = 1, onAdd }) => {
                 <Button onClick={decrement} variant="outline-secondary" size="lg"> ➖ </Button>
                 <h2 className='Count' >{count}</h2>
                 <Button onClick={increment} variant="outline-secondary" size="lg"> ➕ </Button>
-                <ToastContainer />
             </div>
             <Button onClick={() => onAdd(count)} className='AddCart' variant="outline-success">Agregar al carrito</Button>
         </div>

@@ -7,26 +7,29 @@ import Footer from './Componets/Footer/Footer';
 import Cart from './Componets/Cart/Cart';
 import ItemDetailContainer from './Componets/ItemDetailContainer/ItemDetailContainer';
 import { CartContextProvider } from './context/CartContext'
+import { NotificationProvider } from './Notification/Notification'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
     return (
         <div>
-            <CartContextProvider>
-                <BrowserRouter>
-                    <NavBar />
-                    <Routes>
-                        <Route path='/' element={<ItemListContainer greeting={"Próximamente encontrarás los mejores Juegos"} />} />;
-                        <Route path='/login' element={<Login />} />;
-                        <Route path='/category/:categoryId' element={<ItemListContainer />} />;
-                        <Route path='/contact' element={<Contact />} />;
-                        <Route path='/cart' element={<Cart />} />;
-                        <Route path='/item/:id' element={<ItemDetailContainer />} />;
-                    </Routes>
-                    <Footer />
-                </BrowserRouter>
-            </CartContextProvider>
+            <NotificationProvider>
+                <CartContextProvider>
+                    <BrowserRouter>
+                        <NavBar />
+                        <Routes>
+                            <Route path='/' element={<ItemListContainer greeting={"Próximamente encontrarás los mejores Juegos"} />} />;
+                            <Route path='/login' element={<Login />} />;
+                            <Route path='/category/:categoryId' element={<ItemListContainer />} />;
+                            <Route path='/contact' element={<Contact />} />;
+                            <Route path='/cart' element={<Cart />} />;
+                            <Route path='/item/:id' element={<ItemDetailContainer />} />;
+                        </Routes>
+                        <Footer />
+                    </BrowserRouter>
+                </CartContextProvider>
+            </NotificationProvider>
         </div>
     );
 }

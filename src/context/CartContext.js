@@ -1,9 +1,11 @@
 import { createContext, useState } from "react";
+import { useNotification } from '.././Notification/Notification'
 
 const Context = createContext()
 
 export const CartContextProvider = ({ children }) => {
     const [cart, setCart] = useState([])
+    const { setNotification } = useNotification()
 
     const addProduct = (product, quantity) => {
         if (cart.find(item => item.id == product.id)) {
@@ -24,7 +26,17 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const clearCart = () => {
-        setCart([])
+        if (cart.length > 0) {
+            setNotification('Error', '🛒 Se ha vaciado el carrito')
+            setCart([])
+        }
+    }
+
+    const endCart = () => {
+        if (cart.length > 0) {
+            setNotification('success', 'Su compra ha finalizado correctamente')
+            setCart([])
+        }
     }
 
     const getQuantity = () => {
@@ -41,8 +53,12 @@ export const CartContextProvider = ({ children }) => {
 
     const addItem = (id) => {
         const updatedList = cart.map(item => {
-            if (item.id == id && item.quantity < item.stock) {
-                return { ...item, quantity: item.quantity + 1 };
+            if (item.id == id) {
+                if (item.quantity < item.stock) {
+                    return { ...item, quantity: item.quantity + 1 }
+                } else {
+                    setNotification('otherClass', 'Usted ha agregado la cantidad maxima disponible de producto', 'Info')
+                }
             }
             return item;
         });
@@ -53,6 +69,7 @@ export const CartContextProvider = ({ children }) => {
         const productQuantity = cart.find(item => item.id === id).quantity;
         if (productQuantity <= 1) {
             setCart(cart.filter(item => item.id !== id));
+            setNotification('Error', '🛒 Se ha eliminado producto del carrito')
         }
         else {
             const updatedList = cart.map(item => {
@@ -79,7 +96,8 @@ export const CartContextProvider = ({ children }) => {
             total,
             addItem,
             removeItem,
-            getIsProductInCart
+            getIsProductInCart,
+            endCart
         }}>
             {children}
         </Context.Provider>

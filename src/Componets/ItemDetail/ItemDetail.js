@@ -1,17 +1,17 @@
 import { Row, Col, Container, Button } from 'react-bootstrap'
 import { useContext } from 'react';
 import { Link } from "react-router-dom";
+import { useNotification } from '../../Notification/Notification'
 import ItemCount from "../ItemCount/ItemCount";
 import CartContext from '../../context/CartContext'
 import './ItemDetail.css'
 
 const ItemDetail = ({ id, name, img, category, year, price, stock, language }) => {
     const { addProduct, getIsProductInCart } = useContext(CartContext)
-
+    const { setNotification } = useNotification()
     const onAdd = (count) => {
         addProduct({ id, name, price, stock }, count)
-        // toast.success(`🛒 Producto agregado al carrito exitosamente`, {
-        // })
+        setNotification('success', '🛒 Producto agregado al carrito exitosamente')
     }
 
     return (
