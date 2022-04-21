@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
+import { ImSearch } from 'react-icons/im';
 import ItemList from '../ItemList/ItemList';
 import Loading from '../Loading/Loading';
-import { getProductsByCategory, getProducts, getProductsByName } from '../../asyncmock';
-import { ImSearch } from 'react-icons/im';
+import { getProducts, getProductsByName } from '../../Services/firebase/firestore';
 import './ItemListContainer.css';
 
 const ItemListContainer = ({ greeting }) => {
@@ -14,29 +14,16 @@ const ItemListContainer = ({ greeting }) => {
 
     useEffect(() => {
         setLoading(true)
-        if (categoryId) {
-            getProductsByCategory(categoryId)
-                .then(result => {
-                    setProducts(result);
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-                .finally(() => {
-                    setLoading(false);
-                })
-        } else {
-            getProducts()
-                .then(result => {
-                    setProducts(result);
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-                .finally(() => {
-                    setLoading(false);
-                })
-        }
+        getProducts(categoryId)
+            .then(products => {
+                setProducts(products);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            .finally(() => {
+                setLoading(false)
+            });
 
         return (() => {
             setSearch('');
@@ -44,12 +31,10 @@ const ItemListContainer = ({ greeting }) => {
         })
     }, [categoryId]);
 
-    useEffect(() => {
-        setLoading(true)
+    const searchByName = () => {
         getProductsByName(search, categoryId)
-            .then(result => {
-                console.log(result)
-                setProducts(result)
+            .then(products => {
+                setProducts(products);
             })
             .catch(error => {
                 console.log(error);
@@ -57,17 +42,18 @@ const ItemListContainer = ({ greeting }) => {
             .finally(() => {
                 setLoading(false);
             })
-
-        return (() => {
-            setProducts([]);
-        })
-    }, [search]);
+    }
 
     return (
         <div>
             <div className='Filters'>
-                <input className='InputName' type="text" placeholder="Buscar juego por nombre..." value={search} onChange={(e) => setSearch(e.target.value)} />
-                <ImSearch/>
+                <input className='InputName'
+                    type="text"
+                    placeholder="Buscar juego por nombre..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                    onKeyDown={(e) => e.key === 'Enter' ? searchByName() : false} />
+                <ImSearch onClick={() => searchByName()} />
             </div>
             {loading ? <Loading /> :
                 <div>

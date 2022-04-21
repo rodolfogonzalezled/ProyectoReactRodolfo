@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductById } from '../../asyncmock'
 import ItemDetail from "../ItemDetail/ItemDetail"
 import Loading from '../Loading/Loading'
+import { getProductById } from '../../Services/firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState();
@@ -12,8 +12,8 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         setLoading(true)
         getProductById(id)
-            .then(prod => {
-                setProduct(prod)
+            .then(product => {
+                setProduct(product);
             })
             .catch(error => {
                 console.log(error);

@@ -1,4 +1,4 @@
-# Proyecto en desarrollo de Ecommerce de Venta de juegos de Consola. #
+# Proyecto de Ecommerce de Venta de juegos de Consola. #
 
 # Autor: Rodolfo Gonzalez - Curso: React JS #
 
@@ -11,6 +11,6 @@ Website simulando una tienda de ventas de juegos de consolas, aplicando las sigu
 
 # Para su prueba:
 1.	Clonar el repositorio ( git clone https://github.com/rodolfogonzalezled/proyectoReactRodolfo.git )
-2.	Obtener node_modules ( npm i )
+2.	Obtener node_modules ( npm install )
 3.	Iniciar la app desde la terminal ( npm start )
 4.	El proyecto se ejecutará en el navegador en ( http://localhost:3000 )

@@ -25,7 +25,7 @@ const NavBar = () => {
                                 <NavDropdown.Item as={Link} to='/category/accion'> Acción </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/category/combate'> Combate </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/category/conduccion'> Conducción </NavDropdown.Item>
-                                <NavDropdown.Item as={Link} to='/category/deportes'> deportes </NavDropdown.Item>
+                                <NavDropdown.Item as={Link} to='/category/deportes'> Deportes </NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to='/category/simulacion'> Simulación </NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item as={Link} to='/'> Mostrar Todos </NavDropdown.Item>

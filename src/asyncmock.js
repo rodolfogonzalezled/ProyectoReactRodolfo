@@ -121,11 +121,11 @@ const products = [
     }
 ];
 
-export const getProducts = () => {
-    return new Promise((resolve) => {
+export const getProducts = (categoryId) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(products)
-        }, 2000)
+            categoryId ? resolve(products.filter(prod => prod.category === categoryId)) : resolve(products)
+        }, 4000)
     })
 }
 
@@ -137,14 +137,6 @@ export const getProductsByName = (text, categoryId) => {
             } else {
                 resolve(products.filter(el => el.name.toUpperCase().includes(text.toUpperCase())))
             }
-        }, 2000)
-    })
-}
-
-export const getProductsByCategory = (categoryId) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products.filter(el => el.category === categoryId))
         }, 2000)
     })
 }
