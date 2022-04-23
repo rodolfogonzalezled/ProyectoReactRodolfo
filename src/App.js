@@ -19,7 +19,7 @@ function App() {
                     <BrowserRouter>
                         <NavBar />
                         <Routes>
-                            <Route path='/' element={<ItemListContainer greeting={"Próximamente encontrarás los mejores Juegos"} />} />;
+                            <Route path='/' element={<ItemListContainer />} />;
                             <Route path='/login' element={<Login />} />;
                             <Route path='/category/:categoryId' element={<ItemListContainer />} />;
                             <Route path='/contact' element={<Contact />} />;

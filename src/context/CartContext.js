@@ -27,7 +27,7 @@ export const CartContextProvider = ({ children }) => {
 
     const clearCart = () => {
         if (cart.length > 0) {
-            setNotification('Error', '🛒 Se ha vaciado el carrito')
+            setNotification('success', '🛒 Se ha vaciado el carrito')
             setCart([])
         }
     }
