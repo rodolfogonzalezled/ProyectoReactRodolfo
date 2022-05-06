@@ -46,8 +46,8 @@ const NavBar = () => {
                                     <NavDropdown title={user.displayName} id="user">
                                         <NavDropdown.Item as={Link} to={`/orders`}> Mis compras </NavDropdown.Item>
                                         <NavDropdown.Divider />
-                                        <NavDropdown.Item as={Link} to='/' onClick={() => logOut()}> Cerrar Sesión
-                                            <MdLogout className="align-self-center" />
+                                        <NavDropdown.Item className="Logout" as={Link} to='/' onClick={() => logOut()}> Cerrar Sesión
+                                            <MdLogout className="align-self-center ms-3" />
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                 </>

@@ -10,7 +10,7 @@ const ItemDetail = ({ id, name, img, category, year, price, stock, language }) =
     const { addProduct, getIsProductInCart } = useContext(CartContext)
     const { setNotification } = useNotification()
     const onAdd = (count) => {
-        addProduct({ id, name, price, stock }, count)
+        addProduct({ id, name, price, stock, img }, count)
         setNotification('success', '🛒 Producto agregado al carrito exitosamente')
     }
 

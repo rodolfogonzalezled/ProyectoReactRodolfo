@@ -1,13 +1,14 @@
 .Cart {
-    border-radius: 1%;
-    background-color: rgba(145, 140, 136, 0.20);
-    padding: 0% 15%;
+    font-size: larger;
+    color: #008184;
+    padding: 2%;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin: 0 5%;
     text-align: center;
 }
 
 .CartTitle {
-    font-size: xx-large;
-    font-family: 'Londrina Solid', cursive;
     text-align: center;
     color: #008184;
     padding: 3%;
@@ -34,11 +35,6 @@
 }
 
 .CartNoProducts {
-    font-size: xx-large;
-    font-family: 'Londrina Solid', cursive;
     color: #008184;
     padding: 5%;
-    display: 'flex';
-    border-radius: 10px;
-    background-color: lightgray;
 }

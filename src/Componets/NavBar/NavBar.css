@@ -1,5 +1,5 @@
 .NavBar {
-    font-size: larger;
+    font-size: large;
     background-color: #008184;
     width: 100%;
 }
@@ -30,7 +30,6 @@
 
 .NavBarEnd {
     justify-content: end;
-    font-family: 'Londrina Solid', cursive;
 }
 
 .NavBarEnd :hover {
@@ -41,8 +40,11 @@
 .Option {
     color: rgba(255, 255, 255, 0.55);
     text-decoration: none;
-    margin: 0 50px;
     text-decoration: none;
+    font-size: large;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Option :hover {
@@ -53,6 +55,8 @@
     color: white;
     text-decoration: none;
     margin: 0 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .ActiveOption :hover {
@@ -62,4 +66,9 @@
 
 .NavCategory {
     padding: 0;
+}
+
+.Logout {
+    display: flex;
+    justify-content: space-between;
 }

@@ -22,6 +22,7 @@
 .CardText {
     padding-top: 3%;
     border-top: outset;
+    font-size: large;
 }
 
 .CardInitial {

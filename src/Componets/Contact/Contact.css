@@ -1,0 +1,21 @@
+.Contact {
+    border-radius: 1%;
+    padding: 0% 15% 3%;
+    text-align: center;
+}
+
+.ContactTitle {
+    text-align: center;
+    color: #008184;
+    padding: 3%;
+}
+
+.ContactSection {
+    font-size: large;
+    color: #008184;
+    padding: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    background-color: lightgray;
+}
