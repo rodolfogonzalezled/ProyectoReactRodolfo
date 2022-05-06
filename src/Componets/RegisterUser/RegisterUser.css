@@ -1,0 +1,18 @@
+.RegisterContainer {
+    padding: 0% 25% 3%;
+    text-align: center;
+}
+
+.RegisterForm {
+    font-size: large;
+    color: #008184;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+.RegisterTitle {
+    text-align: center;
+    color: #008184;
+    padding: 3%;
+}

@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { UserContextProvider } from './context/UserContext';
+import { NotificationProvider } from './Notification/Notification';
+import './index.css';
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
+    <NotificationProvider>
+        <UserContextProvider>
+            <App />
+        </UserContextProvider>
+    </NotificationProvider>,
+    document.getElementById('root')
 );
 
 reportWebVitals();

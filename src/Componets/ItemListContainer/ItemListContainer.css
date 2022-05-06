@@ -1,16 +1,19 @@
 .Filters {
-    margin: 2%;
+    margin: 3%;
 }
 
 .InputName {
-    width: 30%;
+    width: 60%;
     margin-right: 5px
 }
 
+.TextUser {
+    color: #008184;
+    text-align: end;
+    margin: 3%;
+}
+
 .NoProducts {
-    background-color: rgba(145, 140, 136, 0.20);
-    font-size: xx-large;
-    font-family: 'Londrina Solid', cursive;
     text-align: center;
     color: #008184;
     padding: 7%;
