@@ -31,6 +31,10 @@ const ItemDetailContainer = () => {
         );
     }
 
+    if (!product) {
+        return(<h1 className='NoProducts'> No se encontraron productos </h1>);
+    }
+
     return (
         <div>
             <ItemDetail {...product} />

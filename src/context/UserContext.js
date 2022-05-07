@@ -65,7 +65,7 @@ export const UserContextProvider = ({ children }) => {
                         setNotification('error', 'Usuario o contraseña invalidos');
                         break;
                     default:
-                        setNotification('error', 'Error al registrar Usuario');
+                        setNotification('error', 'Error al Iniciar sesión');
                         break;
                 }
                 console.log(error.code);

@@ -7,6 +7,7 @@ export const createAdaptedOrder = (doc) => {
         buyer: {
             id: data.buyer.id,
             name: data.buyer.name,
+            email: data.buyer.email,
         },
         items: [...data.items]
     }

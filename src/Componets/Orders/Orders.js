@@ -32,8 +32,14 @@ const Orders = () => {
                     <Card.Header>
                         <h4 className='DetailOrderTittle'><b>Detalle de la compra</b></h4>
                         <div className='OrderDetail'>
-                            <h6><b>Orden de compra #</b> {order.id}</h6>
-                            <h6><b>Comprado el día: </b>{new Date(order.date.seconds * 1000).toLocaleDateString("en-US")}</h6>
+                            <div>
+                                <h6><b>Nombre de Usuario: </b> {order.buyer.name}</h6>
+                                <h6><b>Email: </b> {order.buyer.email}</h6>
+                            </div>
+                            <div>
+                                <h6><b>Orden de compra #</b> {order.id}</h6>
+                                <h6><b>Comprado el día: </b>{new Date(order.date.seconds * 1000).toLocaleDateString()}</h6>
+                            </div>
                         </div>
                     </Card.Header>
                     <Card.Body>

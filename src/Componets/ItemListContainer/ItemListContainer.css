@@ -16,5 +16,9 @@
 .NoProducts {
     text-align: center;
     color: #008184;
-    padding: 7%;
+    padding: 12%;
+}
+
+.RowFilter {
+    width: 100%;
 }

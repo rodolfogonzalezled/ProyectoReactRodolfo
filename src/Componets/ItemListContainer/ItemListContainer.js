@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 import { useParams } from "react-router-dom";
 import { ImSearch } from 'react-icons/im';
 import ItemList from '../ItemList/ItemList';
@@ -39,8 +39,8 @@ const ItemListContainer = () => {
     }
 
     return (
-        <>
-            <Row>
+        <Container>
+            <Row className='RowFilter'>
                 <Col xs={6}>
                     <div className='Filters'>
                         <input className='InputName'
@@ -61,7 +61,7 @@ const ItemListContainer = () => {
                     {products.length === 0 ? <h1 className='NoProducts'> No se encontraron productos </h1> : <ItemList products={products} />}
                 </div>
             }
-        </>
+        </Container>
 
     )
 }

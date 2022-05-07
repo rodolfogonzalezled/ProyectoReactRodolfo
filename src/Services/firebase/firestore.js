@@ -37,8 +37,12 @@ export const getProductById = (id) => {
         const docRef = doc(firestoreDb, 'products', id);
         getDoc(docRef)
             .then(doc => {
-                const product = { id: doc.id, ...doc.data() }
-                resolve(product);
+                if(doc.data()){
+                    const product = { id: doc.id, ...doc.data() }
+                    resolve(product);
+                } else {
+                    resolve(null);
+                }
             })
             .catch(error => {
                 reject(error)
